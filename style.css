@@ -1,106 +1,270 @@
-/*RESET*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
 
 body {
-    background-color: #F5F5F5;
-    font-size: 1rem;
-    font-family: 'Marcellus', serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #050816;
+  color: #f9fafb;
+  line-height: 1.6;
 }
 
-/* HEADER — ocupa a largura toda da tela */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0F52BA;
-    color: aliceblue;
-    padding: 28px 40px; /* 28px em cima/baixo, 40px nos lados */
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* NAV — links lado a lado */
-nav {
-    display: flex;
-    gap: 28px;
+.hero {
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-bottom: 1px solid #1f2933;
 }
 
-/* Links do nav */
-nav a {
-    color: aliceblue;
-    text-decoration: none;
-    font-size: 0.9rem;
+.hero-content {
+  max-width: 760px;
+  margin: 0 auto;
 }
 
-nav a:hover {
-    text-decoration: underline; /* sublinha ao passar o mouse */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #38bdf8;
 }
 
-/* FOTO DE PERFIL */
-.foto_perfil {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
 }
 
-/* CONTAINER — centraliza o conteúdo e dá o padding nos lados */
-.container {
-    max-width: 800px;
-    margin: 0 auto;    /* centraliza horizontalmente */
-    padding: 40px 20px;
+.subtitle {
+  font-size: 1.1rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
 }
 
-/* SEÇÃO INICIAL — apresentação */
-.inicial {
-    margin-bottom: 32px;
+.hero-text {
+  color: #d1d5db;
+  margin-bottom: 1.5rem;
 }
 
-.inicial p {
-    font-size: 1.3rem;
-    font-weight: bold;
+.hero-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* DESTAQUE — cor no nome */
-.destaque {
-    color: #0F52BA;
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, border-color 0.2s;
 }
 
-/* PARÁGRAFOS */
-p {
-    margin-bottom: 16px;
-    line-height: 1.7;
+.btn.primary {
+  background: #38bdf8;
+  border-color: #38bdf8;
+  color: #020617;
+  font-weight: 600;
 }
 
-/*MEDIA QUERY — só vale quando a tela
-   tiver 600px ou menos (celular)*/
+.btn.small {
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  background: #1f2937;
+  border-color: #9ca3af;
+}
+
+.btn.primary:hover {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #38bdf8;
+  padding-left: 0.6rem;
+}
+
+.section p {
+  color: #e5e7eb;
+  margin-bottom: 0.5rem;
+}
+
+/* Habilidades */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skill-card {
+  background: #020617;
+  border-radius: 0.75rem;
+  border: 1px solid #1f2933;
+  padding: 1rem 1.1rem;
+}
+
+.skill-card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.skill-card ul {
+  list-style: none;
+}
+
+.skill-card li {
+  margin-bottom: 0.25rem;
+  color: #d1d5db;
+}
+
+.tag {
+  font-size: 0.75rem;
+  background: #111827;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  margin-left: 0.2rem;
+}
+
+/* Projetos */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: #020617;
+  border-radius: 0.75rem;
+  border: 1px solid #1f2933;
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #d1d5db;
+  margin-bottom: 0.75rem;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Formação */
+
+.timeline {
+  margin-top: 1rem;
+  border-left: 2px solid #1f2933;
+  padding-left: 1rem;
+}
+
+.timeline-item {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 0.3rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #38bdf8;
+}
+
+.timeline-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-item p,
+.timeline-item li {
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+/* Contato */
+
+.contact-list {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.contact-list li {
+  margin-bottom: 0.25rem;
+  color: #d1d5db;
+}
+
+.contact-list a {
+  color: #38bdf8;
+}
+
+/* Rodapé */
+
+.footer {
+  border-top: 1px solid #1f2933;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  background: #020617;
+}
+
+/* Responsivo */
+
 @media (max-width: 600px) {
+  .hero {
+    padding-top: 3rem;
+  }
 
-    /* Header vira coluna no celular */
-    header {
-        flex-direction: column;  /* empilha em vez de lado a lado */
-        text-align: center;
-        gap: 16px;
-        padding: 24px 20px;
-    }
+  h1 {
+    font-size: 1.8rem;
+  }
 
-    /* Nav centralizado no celular */
-    nav {
-        gap: 16px;
-        flex-wrap: wrap;        /* quebra linha se não couber */
-        justify-content: center;
-    }
-
-    /* Container com menos padding no celular */
-    .container {
-        padding: 24px 16px;
-    }
-}
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  main {
+    padding: 2rem 1rem 2.5rem;
+  }
 }
